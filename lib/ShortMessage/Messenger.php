@@ -2,7 +2,7 @@
 namespace ShortMessage;
 use ShortMessage\Client\ClientInterface;
 
-class Sender
+class Messenger
 {
     private $client;
 
@@ -11,9 +11,9 @@ class Sender
         $this->client = $client;
     }
 
-    public function sendMessage($text, $phone)
+    public function sendMessage($text, $sourceAddres, $destinationAddress)
     {
-        $message = new Message($text, $phone);
+        $message = new Message($text, $phone, $sourceAddres);
 
         return $this->client->send($message);
     }
