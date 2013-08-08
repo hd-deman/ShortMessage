@@ -3,15 +3,29 @@ namespace ShortMessage;
 
 class Message
 {
-    private $content;
+    private $text;
+    private $sourceAddres;
+    private $destinationAddress;
 
-    public function __construct($content)
+    public function __construct($sourceAddres, $destinationAddress, $text)
     {
-        $this->content = $content;
+        $this->sourceAddres = $sourceAddres;
+        $this->destinationAddress = $destinationAddress;
+        $this->text = $text;
     }
 
-    public function getContent()
+    public function getText()
     {
-        return $this;
+        return $this->text;
+    }
+
+    public function getSourceAddres()
+    {
+        return $this->sourceAddres;
+    }
+
+    public function getDestinationAddress()
+    {
+        return $this->destinationAddress;
     }
 }

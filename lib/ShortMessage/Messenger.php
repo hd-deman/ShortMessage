@@ -11,9 +11,9 @@ class Messenger
         $this->client = $client;
     }
 
-    public function sendMessage($text, $sourceAddres, $destinationAddress)
+    public function sendMessage($sourceAddres, $destinationAddress, $text)
     {
-        $message = new Message($text, $phone, $sourceAddres);
+        $message = new Message($sourceAddres, $destinationAddress, $text);
 
         return $this->client->send($message);
     }
